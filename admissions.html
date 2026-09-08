@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Абитуриентам — VATK</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="site-bar">
+    <a href="index.html" class="brand">
+      <img src="images/logo.jpeg" alt="Логотип VATK">
+      <span class="brand-text">VATK<small>Высший агротехнический колледж</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="news.html">Новости</a></li>
+        <li><a href="specialties.html">Специальности</a></li>
+        <li><a href="teachers.html">Преподаватели</a></li>
+        <li><a href="schedule.html">Расписание</a></li>
+        <li><a href="documents.html">Документы</a></li>
+        <li><a href="admissions.html">Абитуриентам</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="gear-rule"></div>
+
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Главная</a> / Абитуриентам</p>
+    <h1>Абитуриентам</h1>
+    <p>Как поступить в колледж: документы, сроки и ответы на частые вопросы.</p>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;">
+    <div>
+      <h2 style="font-size:1.3rem;">Необходимые документы</h2>
+      <ul>
+        <li>Заявление на имя директора колледжа</li>
+        <li>Документ об образовании (аттестат/свидетельство) — оригинал</li>
+        <li>6 фотографий размером 3×4</li>
+        <li>Копия удостоверения личности</li>
+        <li>Медицинская справка формы 086-У</li>
+        <li>Справка с места жительства (при необходимости)</li>
+      </ul>
+
+      <h2 style="font-size:1.3rem;margin-top:32px;">Сроки приёма</h2>
+      <p>Документы принимаются с 20 июня по 25 августа. Зачисление проводится по результатам конкурса аттестатов на общедоступные специальности.</p>
+
+      <h2 id="faq" style="font-size:1.3rem;margin-top:32px;">Частые вопросы</h2>
+      <details class="faq">
+        <summary>Можно ли поступить после 9 класса?</summary>
+        <p>Да, часть специальностей доступна на базе 9 классов — срок обучения по ним больше, чем при поступлении после 11 класса.</p>
+      </details>
+      <details class="faq">
+        <summary>Нужно ли сдавать вступительные экзамены?</summary>
+        <p>На большинство специальностей зачисление идёт по среднему баллу аттестата. Уточняйте требования для конкретной специальности у приёмной комиссии.</p>
+      </details>
+      <details class="faq">
+        <summary>Есть ли общежитие?</summary>
+        <p>Да, иногородним студентам предоставляется место в общежитии при наличии свободных мест.</p>
+      </details>
+      <details class="faq">
+        <summary>Можно ли учиться заочно?</summary>
+        <p>Да, по ряду специальностей открыта заочная форма обучения — расписание сессий уточняйте в учебной части.</p>
+      </details>
+    </div>
+
+    <div>
+      <div class="callout" style="margin-top:0;">
+        <strong>Форма ниже отправляет данные только в браузере.</strong> Чтобы заявки приходили на почту или в базу данных, потребуется подключить простой сервер обработки форм.
+      </div>
+      <h2 style="font-size:1.3rem;">Онлайн-заявка</h2>
+      <form id="admission-form" class="form-grid">
+        <div>
+          <label for="fio">ФИО</label>
+          <input id="fio" name="fio" type="text" required>
+        </div>
+        <div>
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" type="tel" required>
+        </div>
+        <div class="full">
+          <label for="spec">Специальность</label>
+          <select id="spec" name="spec">
+            <option>Агрономия</option>
+            <option>Механизация сельского хозяйства</option>
+            <option>Электрификация и автоматизация сельского хозяйства</option>
+            <option>Строительство и эксплуатация зданий</option>
+            <option>Ветеринария</option>
+            <option>Информационные системы</option>
+            <option>Экономика и бухгалтерский учёт</option>
+          </select>
+        </div>
+        <div class="full">
+          <label for="msg">Комментарий</label>
+          <textarea id="msg" name="msg" rows="4"></textarea>
+        </div>
+        <div class="full">
+          <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        </div>
+        <p id="form-note" class="full" style="display:none;color:var(--green);font-weight:700;"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© 2026 VATK — Высший агротехнический колледж</span>
+      <a href="contacts.html" style="color:#cfcde6;">Связаться с нами</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
