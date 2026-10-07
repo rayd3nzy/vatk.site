@@ -1,28 +1,37 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.querySelector('.main-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      nav.classList.toggle('open');
-      var expanded = nav.classList.contains('open');
-      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+  // мобильное меню
+  var burger = document.querySelector('.burger');
+  var nav = document.querySelector('nav.main');
+  if (burger && nav) {
+    burger.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
   }
 
-  // mark current page link as active
+  // подсветка текущей страницы в меню
   var here = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.main-nav a').forEach(function (a) {
-    if (a.getAttribute('href') === here) a.classList.add('active');
+  document.querySelectorAll('nav.main a').forEach(function (a) {
+    if (a.getAttribute('href') === here) a.classList.add('on');
   });
 
-  // simple admission-form handler (no backend on a static site)
-  var form = document.querySelector('#admission-form');
+  // форма заявки: открывает письмо на почту колледжа
+  var form = document.getElementById('admission-form');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var note = document.querySelector('#form-note');
+      var f = new FormData(form);
+      var body =
+        'ФИО: ' + (f.get('fio') || '') + '\n' +
+        'Телефон: ' + (f.get('phone') || '') + '\n' +
+        'Специальность: ' + (f.get('spec') || '') + '\n\n' +
+        (f.get('msg') || '');
+      var url = 'mailto:Vatk1968@mail.ru?subject=' + encodeURIComponent('Заявка с сайта VATK') +
+        '&body=' + encodeURIComponent(body);
+      window.location.href = url;
+      var note = document.getElementById('form-note');
       if (note) {
-        note.textContent = 'Заявка сформирована. Подключите приём заявок на сервере или укажите e-mail приёмной комиссии для отправки формы.';
+        note.textContent = 'Откроется ваша почтовая программа с готовым письмом — останется нажать «Отправить».';
         note.style.display = 'block';
       }
     });
