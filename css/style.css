@@ -89,7 +89,8 @@ nav.main a.on { background: var(--navy); color: #fff; }
 .info small { display: block; font-size: 14px; color: #aeb0ee; margin-bottom: 4px; }
 .info b { font-size: 18px; font-weight: 700; line-height: 1.35; display: block; }
 .info a:hover b { text-decoration: underline; }
-.ig { display: inline-flex; align-items: center; gap: 8px; }
+.ig, .info b.ig { display: inline-flex; align-items: center; gap: 10px; }
+.ig svg { flex: none; }
 
 /* ---------- секции ---------- */
 section.s { padding: 96px 0 0; }
